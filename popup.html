@@ -6,6 +6,7 @@
     <script type="text/javascript" src="./script/bootstrap.js"></script>
     <script type="text/javascript" src="./script/setting.js"></script>
     <link rel="stylesheet" type="text/css" href="./style/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
     <style>
       body {
         width: 500px;
@@ -14,7 +15,7 @@
   </head>
   <body>
     <script type="text/javascript" src="./script/setting.js"></script>
-    <div class="container">
+    <div class="container popup-container">
       <div class="row">
         <nav class="navbar navbar-light bg-light">
           <a class="navbar-brand" href="#">
@@ -46,33 +47,176 @@
       </div>
 
       <div class="container">
-        <div class="accordion" id="accordionExample">
+        <h3 class="display-5">How To Use</h1>
+
+        <div class="accordion" id="howToUseAccordion">
+
           <div class="card">
-            <div class="card-header" id="headingOne">
+            <div class="card-header" id="colorSettingHeader">
               <h5 class="mb-0">
                 <button
                   class="btn btn-link"
                   type="button"
                   data-toggle="collapse"
-                  data-target="#howToUse"
+                  data-target="#colorSetting"
                   aria-expanded="true"
-                  aria-controls="howToUse"
+                  aria-controls="colorSetting"
                 >
-                  How To Use
+                  Color Setting
                 </button>
               </h5>
             </div>
 
             <div
-              id="howToUse"
+              id="colorSetting"
               class="collapse"
-              aria-labelledby="headingOne"
-              data-parent="#accordionExample"
+              data-parent="#howToUseAccordion"
+              aria-labelledby="colorSettingHeader"
             >
               <div class="card-body">
-                aaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+                <table class="table table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tags</th>
+                      <th scope="col">Result</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><kbd>Default Text</kbd></td>
+                      <td>
+                        <span class="comment">Default Text</span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#C:red&gt;Red Text</kbd></td>
+                      <td>
+                        <span class="comment color-red">Red Text</span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#C:blue&gt;Blue Text</kbd></td>
+                      <td>
+                        <span class="comment color-blue">Blue Text</span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#C:green&gt;Green Text</kbd></td>
+                      <td>
+                        <span class="comment color-green">Green Text</span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#C:orange&gt;Orange Text</kbd></td>
+                      <td>
+                        <span class="comment color-orange">Orange Text</span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#C:purple&gt;Purple Text</kbd></td>
+                      <td>
+                        <span class="comment color-purple">Purple Text</span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#C:black&gt;Black Text</kbd></td>
+                      <td>
+                        <span class="comment color-black">Black Text</span>
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div
+              class="card-header"
+              id="FontSizeSettingHeader"
+            >
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#FontSizeSetting"
+                  aria-expanded="false"
+                  aria-controls="FontSizeSetting"
+                >
+                  Font Size Setting
+                </button>
+              </h5>
+            </div>
+            <div id="FontSizeSetting"
+              class="collapse"
+              data-parent="#howToUseAccordion"
+              aria-labelledby="FontSizeSettingHeader"
+            >
+              <div class="card-body">
+                <span>
+                  ※注)文字の大きさは画面の大きさに応じて変わります。
+                  Note: The size of the text will vary depending on the size of the screen.
+                </span>
+
+                <table class="table table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tags</th>
+                      <th scope="col">Result</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><kbd>Default Text</kbd></td>
+                      <td>
+                        <span
+                          class="comment color-blue"
+                          style="font-size: 100%;"
+                        >
+                          Default Text
+                        </span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#S:l&gt;Large Text</kbd></td>
+                      <td>
+                        <span
+                          class="comment color-blue"
+                          style="font-size: 150%;"
+                        >
+                          Large Text
+                        </span>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><kbd>&lt;#C:s&gt;Small Text</kbd></td>
+                      <td>
+                        <span
+                          class="comment color-blue"
+                          style="font-size: 75%;"
+                        >
+                          Small Text
+                        </span>
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+
               </div>
             </div>
           </div>
