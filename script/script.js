@@ -59,6 +59,8 @@ const config = {
 
 document.addEventListener('DOMContentLoaded', () => {
   var elem = document.body; // ほんとはチャットボックスを監視するべきだけどmeetに参加画面と判断するのめんどくさい これのせいで重い
+  console.log('oORaUb NONs6c XDitY classあるかどうかの判定したい')
+
   observer.observe(elem, config);
 
   var cas = document.createElement('iframe');
