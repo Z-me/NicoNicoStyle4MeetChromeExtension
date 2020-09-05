@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <script type="text/javascript" src="./script/jquery.min.js"></script>
     <script type="text/javascript" src="./script/bootstrap.js"></script>
+    <script type="text/javascript" src="./script/setting.js"></script>
     <link rel="stylesheet" type="text/css" href="./style/bootstrap.css">
     <style>
       body {
@@ -12,15 +13,72 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="./image/icon128.png" width="30" height="30" alt="">
-        Google Meet For Nico-Nico Style
-      </a>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="active" value=true>
-        <label class="custom-control-label" for="active">有効化</label>
+    <script type="text/javascript" src="./script/setting.js"></script>
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./image/icon128.png"
+              width="30"
+              height="30"
+              alt=""
+            >
+            Nico-Nico Style For Google Meet
+          </a>
+
+          <div class="custom-control custom-switch">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="active"
+            />
+            <label
+              class="custom-control-label"
+              for="active"
+            >
+              Activate
+            </label>
+          </div>
+
+        </nav>
+
       </div>
-    </nav>
+
+      <div class="container">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#howToUse"
+                  aria-expanded="true"
+                  aria-controls="howToUse"
+                >
+                  How To Use
+                </button>
+              </h5>
+            </div>
+
+            <div
+              id="howToUse"
+              class="collapse"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                aaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>
