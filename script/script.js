@@ -1,4 +1,14 @@
+// NOTE: elements
 let prevThread;
+
+// NOTE: Values
+const config = {
+  attributes: true,
+  subtree: true,
+  childList: true,
+  characterData: true
+}
+let isActive = false
 
 let observer = new MutationObserver( (records) => {
   try {
@@ -6,8 +16,8 @@ let observer = new MutationObserver( (records) => {
 
     if ( prevThread != undefined && thread.isEqualNode(prevThread) ) return
     if ( thread.getElementsByClassName('gYckH').length == 1 ) return
-    console.log('hogehogehogehoge', localStorage.getItem('mns-active') )
-    if ( localStorage.getItem('mns-active') !== 'true' ) return
+    // console.log('hogehogehogehoge', localStorage.getItem('mns-active') )
+    if ( !isActive ) return
 
     prevThread = thread.cloneNode(true)
     const messages = thread.getElementsByClassName('oIy2qc')
@@ -23,14 +33,17 @@ let observer = new MutationObserver( (records) => {
     comment.textContent = message
     document.getElementsByTagName('body')[0].appendChild(comment)
 
+    // TODO: size設定
     let letterSize = screenHeight * 0.05
-
+    // TODO: 色設定
     comment.setAttribute('class', 'comment')
 
+    const footerHeight = 88
+    let topPosition = Math.floor((screenHeight - letterSize - footerHeight) * Math.random())
     let commentStyle = {
-      left: screenWidth + 'px',
-      top: Math.floor((screenHeight - letterSize) * Math.random()) + 'px',
-      fontSize: letterSize + 'px',
+      left: `${screenWidth}px`,
+      top: `${topPosition}px`,
+      fontSize: `${letterSize}px`,
     }
     for(let prop in commentStyle) {
       comment.style[prop] = commentStyle[prop]
@@ -39,7 +52,7 @@ let observer = new MutationObserver( (records) => {
 
     $(comment).animate(
       {
-        'left': -comment.offsetWidth + 'px'
+        'left': `${-comment.offsetWidth}px`
       },
       {
         'duration': 6000,
@@ -54,13 +67,6 @@ let observer = new MutationObserver( (records) => {
   }
 })
 
-const config = {
-  attributes: true,
-  subtree: true,
-  childList: true,
-  characterData: true
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   // FIXME: チャットボックス監視するように変更
   let elem = document.body
@@ -74,6 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
   cas.setAttribute('height', '100%')
   cas.setAttribute('frameborder', '0')
   cas.setAttribute('style', "position:absolute;border:0;width:100%;filter:invert(100%);-webkit-filter:invert(100%);z-index:2147483647;pointer-events:none;")
-  let elem = document.body
+  // let elem = document.body
   elem.appendChild(cas)
+})
+
+chrome.runtime.onMessage.addListener(function(request) {
+  console.log('aaa', request)
+  isActive = request
+  return true
 })

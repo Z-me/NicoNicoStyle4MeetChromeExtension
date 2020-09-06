@@ -5,6 +5,14 @@ $(() => {
   // NOTE: functions
   const getActive = () => {
     isActive = localStorage.getItem('mns-active') === 'true'
+
+    chrome.tabs.query({
+      active: true,
+      currentWindow: true
+    }, function (tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, isActive)
+    })
+
     $('#active').prop('checked', isActive)
   }
   const changeActive = (flag) => {
