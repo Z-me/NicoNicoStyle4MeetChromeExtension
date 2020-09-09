@@ -1,5 +1,6 @@
 // NOTE: elements
 let prevThread;
+let isActive = localStorage.getItem('mns-active') === 'true'
 
 // NOTE: Values
 const config = {
@@ -8,7 +9,6 @@ const config = {
   childList: true,
   characterData: true
 }
-let isActive = false
 
 let observer = new MutationObserver( (records) => {
   try {
@@ -29,6 +29,8 @@ let observer = new MutationObserver( (records) => {
     let screenWidth = screen.offsetWidth
 
     let comment = document.createElement('span')
+
+    console.log('message', message)
 
     comment.textContent = message
     document.getElementsByTagName('body')[0].appendChild(comment)
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 chrome.runtime.onMessage.addListener(function(request) {
-  console.log('aaa', request)
+  localStorage.setItem('mns-active', request)
   isActive = request
   return true
 })

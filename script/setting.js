@@ -17,6 +17,12 @@ $(() => {
   }
   const changeActive = (flag) => {
    localStorage.setItem('mns-active', flag)
+   chrome.tabs.query({
+     active: true,
+     currentWindow: true
+   }, function (tabs) {
+     chrome.tabs.sendMessage(tabs[0].id, flag)
+   })
   }
 
   // NOTE: init

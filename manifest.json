@@ -10,12 +10,6 @@
   "permissions": [
     "storage"
   ],
-  "background": {
-    "scripts": [
-      "./script/jquery.min.js"
-    ],
-    "persistent": false
-  },
   "content_scripts": [
     {
       "js": [
