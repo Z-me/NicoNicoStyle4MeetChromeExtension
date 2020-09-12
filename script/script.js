@@ -2,25 +2,16 @@
 let prevThread;
 let isActive = localStorage.getItem('mns-active') === 'true'
 
-// NOTE: Values
-const config = {
-  attributes: true,
-  subtree: true,
-  childList: true,
-  characterData: true
-}
-
 let observer = new MutationObserver( (records) => {
   try {
-    const thread = document.getElementsByClassName('z38b6 CnDs7d hPqowe')[0]
+    const thread = document.getElementsByClassName(CLASS_OBJ.thread)[0]
 
     if ( prevThread != undefined && thread.isEqualNode(prevThread) ) return
     if ( thread.getElementsByClassName('gYckH').length == 1 ) return
-    // console.log('hogehogehogehoge', localStorage.getItem('mns-active') )
     if ( !isActive ) return
 
     prevThread = thread.cloneNode(true)
-    const messages = thread.getElementsByClassName('oIy2qc')
+    const messages = thread.getElementsByClassName(CLASS_OBJ.messages)
     const message = messages[messages.length - 1].innerText
 
     // FIXME: スクリーンオブジェクトでかい‥。
@@ -70,11 +61,9 @@ let observer = new MutationObserver( (records) => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-  // FIXME: チャットボックス監視するように変更
   let elem = document.body
-  console.log('oORaUb NONs6c XDitY classあるかどうかの判定したい')
 
-  observer.observe(elem, config)
+  observer.observe(elem, OBSERVE_CONFIG)
 
   let cas = document.createElement('iframe')
   // cas.setAttribute('src', 'https://river.tango-gacha.com/')

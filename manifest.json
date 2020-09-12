@@ -14,6 +14,7 @@
     {
       "js": [
         "./script/jquery.min.js",
+        "./script/const.js",
         "./script/script.js"
       ],
       "css": ["./style/style.css"],
