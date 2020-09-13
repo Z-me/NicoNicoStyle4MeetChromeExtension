@@ -21,15 +21,16 @@ let observer = new MutationObserver( (records) => {
 
     let comment = document.createElement('span')
 
-    console.log('message', message)
-
-    comment.textContent = message
+    let { msg, size, color } = getMessages(message)
+    comment.textContent = msg
     document.getElementsByTagName('body')[0].appendChild(comment)
 
-    // TODO: size設定
-    let letterSize = screenHeight * 0.05
+    let letterSize = screenHeight * 0.05 * size
     // TODO: 色設定
     comment.setAttribute('class', 'comment')
+    if (color) {
+      comment.setAttribute('class', `comment color-${color}`)
+    }
 
     const footerHeight = 88
     let topPosition = Math.floor((screenHeight - letterSize - footerHeight) * Math.random())
@@ -59,6 +60,43 @@ let observer = new MutationObserver( (records) => {
     return
   }
 })
+
+const getMessages = (msg) => {
+  const tagReg = /<("[^"]*"|'[^']*'|[^'">])*>/g
+  let size = 1
+  let color = false
+
+  if (!tagReg.test(msg)) {
+    return { msg, size, color}
+  } else {
+    const colorReg = /<.*\#(C|c):.*>/g
+    const resultColor = colorReg.exec(msg)
+    if (resultColor !== null) {
+      const reg = /(red|blue|green|orange|purple|black)/g
+      const result = reg.exec(resultColor[0].toLowerCase())
+      color = result[0]
+    }
+
+    const sizeReg = /<.*\#(S|s):.*>/g
+    const resultSize = sizeReg.exec(msg)
+    if (resultSize !== null) {
+      console.log('call resize', resultSize[0])
+      const small = /(s|S)/g
+      const large = /(l|L)/g
+      if (small.test(resultSize[0])) {
+        size = 0.75
+      }
+      if (large.test(resultSize[0])) {
+        size = 1.5
+      }
+    }
+  }
+  return {
+    msg: msg.replace(tagReg, ''),
+    size,
+    color
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   let elem = document.body
