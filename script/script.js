@@ -80,11 +80,10 @@ const getMessages = (msg) => {
     const sizeReg = /<.*\#(S|s):.*>/g
     const resultSize = sizeReg.exec(msg)
     if (resultSize !== null) {
-      console.log('call resize', resultSize[0])
       const small = /(s|S)/g
       const large = /(l|L)/g
       if (small.test(resultSize[0])) {
-        size = 0.75
+        size = 0.5
       }
       if (large.test(resultSize[0])) {
         size = 1.5
@@ -108,8 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
   cas.setAttribute('width', '100%')
   cas.setAttribute('height', '100%')
   cas.setAttribute('frameborder', '0')
-  cas.setAttribute('style', "position:absolute;border:0;width:100%;filter:invert(100%);-webkit-filter:invert(100%);z-index:2147483647;pointer-events:none;")
-  // let elem = document.body
+  const styleText = 'position:absolute;' +
+    'border:0;' +
+    'width:100%;' +
+    'filter:invert(100%);' +
+    '-webkit-filter:invert(100%);' +
+    'z-index:2147483647;' +
+    'pointer-events:none;'
+  cas.setAttribute('style', styleText)
   elem.appendChild(cas)
 })
 

@@ -3,6 +3,7 @@
   color: #fff;
   text-shadow: 2px 2px #558ABB;
   white-space: nowrap;
+  line-height: initial;
   z-index: 2147483647;
 }
 .comment.color-red {
