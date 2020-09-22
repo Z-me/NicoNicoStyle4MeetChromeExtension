@@ -26,7 +26,6 @@ let observer = new MutationObserver( (records) => {
     document.getElementsByTagName('body')[0].appendChild(comment)
 
     let letterSize = screenHeight * 0.05 * size
-    // TODO: 色設定
     comment.setAttribute('class', 'comment')
     if (color) {
       comment.setAttribute('class', `comment color-${color}`)
@@ -97,6 +96,29 @@ const getMessages = (msg) => {
   }
 }
 
+const setActivateState = (flag) => {
+  localStorage.setItem('nsm-active', flag)
+  isActive = flag
+}
+
+const setColorTag = (color) => {
+  const inputText = $(INPUT_AREA).val()
+  const colorReg = /<#(C|c):(red|blue|green|orange|purple|black)>/g
+  let message = inputText.replace(colorReg, '')
+  let tag = `<#C:${color}>`
+  $(INPUT_AREA).val(`${tag}${message}`)
+  return true
+}
+
+const setSizeTag = (size) => {
+  const inputText = $(INPUT_AREA).val()
+  const sizeReg = /<#(S|s):(l|s)>/g
+  let message = inputText.replace(sizeReg, '')
+  let tag = `<#S:${size}>`
+  $(INPUT_AREA).val(`${tag}${message}`)
+  return true
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   let elem = document.body
 
@@ -119,7 +141,16 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 chrome.runtime.onMessage.addListener(function(request) {
-  localStorage.setItem('mns-active', request)
-  isActive = request
+  const keys = Object.keys(request)
+  if (keys.includes('active')) {
+    setActivateState(request.active)
+  }
+  if (keys.includes('color')) {
+    setColorTag(request.color)
+  }
+  if (keys.includes('size')) {
+    const size = request.size === 'large' ? 'l' : 's'
+    setSizeTag(size)
+  }
   return true
 })
