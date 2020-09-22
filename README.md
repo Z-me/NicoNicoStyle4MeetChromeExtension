@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/5908070/93610776-78b48400-fa08-11ea-9624-1e221b4d87ec.png)
 
-この拡張機能はMeetのコメントをニコニコ動画風に表示するChoromeの拡張機能です。  
+この拡張機能はMeetのコメントをニコニコ動画風に表示するChoromeの拡張機能です。<br>
 This extension is an extension of Chome that shows the comments of Meet as if they were Nico-Nico-Douga.
 
 ## Description
@@ -14,7 +14,7 @@ You can change the size and color of the text by specifying keywords.
 
 
 ## Original Source
-本拡張機能の元ネタは[Yeq6X](https://github.com/Yeq6X)氏の[NicoStyleMeet](https://github.com/Yeq6X/NicoStyleMeet)です。  
+本拡張機能の元ネタは[Yeq6X](https://github.com/Yeq6X)氏の[NicoStyleMeet](https://github.com/Yeq6X/NicoStyleMeet)です。<br>
 この場をお借りして、素晴らしいアイディアに感謝をいたします。
 
 The original source of this extension was [NicoStyleMeet](https://github.com/Yeq6X/NicoStyleMeet) by [Yeq6X](https://github.com/Yeq6X).
@@ -23,7 +23,8 @@ I would like to take this opportunity to thank you for the great idea.
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Google Meetのチャットを某サイト風に流す拡張機能を公開しました。<a href="https://t.co/o8l39Crmgr">https://t.co/o8l39Crmgr</a> <a href="https://t.co/zsZpAproxj">pic.twitter.com/zsZpAproxj</a></p>&mdash; ろぬ (@Yeq6N) <a href="https://twitter.com/Yeq6N/status/1266381095177555969?ref_src=twsrc%5Etfw">May 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Demo
-![DEMO](https://user-images.githubusercontent.com/5908070/93036418-c46ad480-f67a-11ea-841d-654451413c9a.gif)
+![DEMO](https://user-images.githubusercontent.com/5908070/93848402-72fabf00-fce4-11ea-9b5f-9d7daa3a9d06.gif)
+
 
 ## Usage
 1. この拡張機能をGoogle Chromeにインストールし、![icon48](https://user-images.githubusercontent.com/5908070/93611855-c382cb80-fa09-11ea-8d3d-7a624a4494bd.png)このアイコンから`Activate`を選択することで、利用することができます。<br>You can use this extension by installing it on Google Chrome and selecting `Activate` from ![icon48](https://user-images.githubusercontent.com/5908070/93611855-c382cb80-fa09-11ea-8d3d-7a624a4494bd.png) this icon.

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <style>
       body {
-        width: 500px;
+        width: 600px;
       }
     </style>
   </head>
@@ -79,59 +79,90 @@
                   <thead>
                     <tr>
                       <th scope="col">Tags</th>
-                      <th scope="col">Result</th>
-                      <th></th>
+                      <th scope="col" class="pdr">Result</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><kbd>Default Text</kbd></td>
                       <td>
-                        <span class="comment">Default Text</span>
+                        <button type="button" class="btn btn-dark">
+                          Default Text
+                        </button>
                       </td>
-                      <td></td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" disabled>
+                          Default Text
+                        </button>
+                      </td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#C:red&gt;Red Text</kbd></td>
                       <td>
-                        <span class="comment color-red">Red Text</span>
+                        <button type="button" class="btn btn-dark" id="tag-color-red">
+                          &lt;#C:red&gt;Red Text
+                        </button>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-red tag-sample" disabled>
+                          Red Text
+                        </button>
                       </td>
-                      <td></td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#C:blue&gt;Blue Text</kbd></td>
                       <td>
-                        <span class="comment color-blue">Blue Text</span>
+                        <button type="button" class="btn btn-dark" id="tag-color-blue">
+                          &lt;#C:blue&gt;Blue Text
+                        </button>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-blue tag-sample" disabled>
+                          Blue Text
+                        </button>
                       </td>
-                      <td></td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#C:green&gt;Green Text</kbd></td>
                       <td>
-                        <span class="comment color-green">Green Text</span>
+                        <button type="button" class="btn btn-dark" id="tag-color-green">
+                          &lt;#C:green&gt;Green Text
+                        </button>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-green tag-sample" disabled>
+                          Green Text
+                        </button>
                       </td>
-                      <td></td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#C:orange&gt;Orange Text</kbd></td>
                       <td>
-                        <span class="comment color-orange">Orange Text</span>
+                        <button type="button" class="btn btn-dark" id="tag-color-orange">
+                          &lt;#C:orange&gt;Orange Text
+                        </button>
                       </td>
-                      <td></td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-orange tag-sample" disabled>
+                          Orange Text
+                        </button>
+                      </td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#C:purple&gt;Purple Text</kbd></td>
                       <td>
-                        <span class="comment color-purple">Purple Text</span>
+                        <button type="button" class="btn btn-dark" id="tag-color-purple">
+                          &lt;#C:purple&gt;Purple Text
+                        </button>
                       </td>
-                      <td></td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-purple tag-sample" disabled>
+                          Purple Text
+                        </button>
+                      </td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#C:black&gt;Black Text</kbd></td>
                       <td>
-                        <span class="comment color-black">Black Text</span>
+                        <button type="button" class="btn btn-dark" id="tag-color-black">
+                          &lt;#C:black&gt;Black Text
+                        </button>
                       </td>
-                      <td></td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-black tag-sample" disabled>
+                          Black Text
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -173,46 +204,45 @@
                   <thead>
                     <tr>
                       <th scope="col">Tags</th>
-                      <th scope="col">Result</th>
-                      <th></th>
+                      <th scope="col" class="pdr">Result</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><kbd>Default Text</kbd></td>
                       <td>
-                        <span
-                          class="comment color-blue"
-                          style="font-size: 100%;"
-                        >
+                        <button type="button" class="btn btn-dark">
                           Default Text
-                        </span>
+                        </button>
                       </td>
-                      <td></td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" disabled>
+                          Default Text
+                        </button>
+                      </td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#S:l&gt;Large Text</kbd></td>
                       <td>
-                        <span
-                          class="comment color-blue"
-                          style="font-size: 150%;"
-                        >
+                        <button type="button" class="btn btn-dark" id="tag-size-large">
+                          &lt;#S:l&gt;Large Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" style="font-size: 150%;" disabled>
                           Large Text
-                        </span>
+                        </button>
                       </td>
-                      <td></td>
                     </tr>
                     <tr>
-                      <td><kbd>&lt;#S:s&gt;Small Text</kbd></td>
                       <td>
-                        <span
-                          class="comment color-blue"
-                          style="font-size: 50%;"
-                        >
-                          Small Text
-                        </span>
+                        <button type="button" class="btn btn-dark" id="tag-size-small">
+                          &lt;#S:s&gt;Small Text
+                        </button>
                       </td>
-                      <td></td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" style="font-size: 50%;" disabled>
+                          Small Text
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

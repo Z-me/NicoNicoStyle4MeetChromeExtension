@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.1",
+  "version": "1.0.0",
   "name": "Nico-Nico Style For Google Meet",
   "icons": {
     "16": "./image/icon16.png",

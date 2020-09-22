@@ -34,3 +34,9 @@
 .popup-container {
   padding-bottom: 15px;
 }
+.pdr {
+  padding-right: 80px !important;
+}
+.tag-sample {
+  opacity: 1 !important;
+}
