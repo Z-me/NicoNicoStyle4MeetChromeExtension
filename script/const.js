@@ -1,5 +1,5 @@
 const CLASS_OBJ = {
-  thread: 'z38b6 CnDs7d hPqowe',
+  thread: 'z38b6',
   messages: 'oIy2qc'
 }
 const INPUT_AREA = 'textarea[name="chatTextInput"]'
