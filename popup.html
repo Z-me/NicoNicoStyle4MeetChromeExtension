@@ -4,23 +4,255 @@
     <meta charset="UTF-8" />
     <script type="text/javascript" src="./script/jquery.min.js"></script>
     <script type="text/javascript" src="./script/bootstrap.js"></script>
+    <script type="text/javascript" src="./script/setting.js"></script>
     <link rel="stylesheet" type="text/css" href="./style/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
     <style>
       body {
-        width: 500px;
+        width: 600px;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="./image/icon128.png" width="30" height="30" alt="">
-        Google Meet For Nico-Nico Style
-      </a>
-      <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="active" value=true>
-        <label class="custom-control-label" for="active">有効化</label>
+    <script type="text/javascript" src="./script/setting.js"></script>
+    <div class="container popup-container">
+      <div class="row">
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./image/icon128.png"
+              width="30"
+              height="30"
+              alt=""
+            >
+            Nico-Nico Style For Google Meet
+          </a>
+
+          <div class="custom-control custom-switch">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="active"
+            />
+            <label
+              class="custom-control-label"
+              for="active"
+            >
+              Activate
+            </label>
+          </div>
+
+        </nav>
+
       </div>
-    </nav>
+
+      <div class="container">
+        <h3 class="display-5">How To Use</h1>
+
+        <div class="accordion" id="howToUseAccordion">
+
+          <div class="card">
+            <div class="card-header" id="colorSettingHeader">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#colorSetting"
+                  aria-expanded="true"
+                  aria-controls="colorSetting"
+                >
+                  Color Setting
+                </button>
+              </h5>
+            </div>
+
+            <div
+              id="colorSetting"
+              class="collapse"
+              data-parent="#howToUseAccordion"
+              aria-labelledby="colorSettingHeader"
+            >
+              <div class="card-body">
+
+                <table class="table table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tags</th>
+                      <th scope="col" class="pdr">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark">
+                          Default Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" disabled>
+                          Default Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-color-red">
+                          &lt;#C:red&gt;Red Text
+                        </button>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-red tag-sample" disabled>
+                          Red Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-color-blue">
+                          &lt;#C:blue&gt;Blue Text
+                        </button>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-blue tag-sample" disabled>
+                          Blue Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-color-green">
+                          &lt;#C:green&gt;Green Text
+                        </button>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-green tag-sample" disabled>
+                          Green Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-color-orange">
+                          &lt;#C:orange&gt;Orange Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-orange tag-sample" disabled>
+                          Orange Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-color-purple">
+                          &lt;#C:purple&gt;Purple Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-purple tag-sample" disabled>
+                          Purple Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-color-black">
+                          &lt;#C:black&gt;Black Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment color-black tag-sample" disabled>
+                          Black Text
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div
+              class="card-header"
+              id="FontSizeSettingHeader"
+            >
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#FontSizeSetting"
+                  aria-expanded="false"
+                  aria-controls="FontSizeSetting"
+                >
+                  Font Size Setting
+                </button>
+              </h5>
+            </div>
+            <div id="FontSizeSetting"
+              class="collapse"
+              data-parent="#howToUseAccordion"
+              aria-labelledby="FontSizeSettingHeader"
+            >
+              <div class="card-body">
+                <span>
+                  ※注)文字の大きさは画面の大きさに応じて変わります。
+                  Note: The size of the text will vary depending on the size of the screen.
+                </span>
+
+                <table class="table table-sm table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Tags</th>
+                      <th scope="col" class="pdr">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark">
+                          Default Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" disabled>
+                          Default Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-size-large">
+                          &lt;#S:l&gt;Large Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" style="font-size: 150%;" disabled>
+                          Large Text
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <button type="button" class="btn btn-dark" id="tag-size-small">
+                          &lt;#S:s&gt;Small Text
+                        </button>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-dark comment tag-sample" style="font-size: 50%;" disabled>
+                          Small Text
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>

@@ -3,5 +3,40 @@
   color: #fff;
   text-shadow: 2px 2px #558ABB;
   white-space: nowrap;
+  line-height: initial;
   z-index: 2147483647;
+}
+.comment.color-red {
+  color: #e60f4f;
+  text-shadow: 2px 2px #fff;
+}
+.comment.color-blue {
+  color: #1d4dc8;
+  text-shadow: 2px 2px #fff;
+}
+.comment.color-green {
+  color: #007357;
+  text-shadow: 2px 2px #fff;
+}
+.comment.color-orange {
+  color: #e99330;
+  text-shadow: 2px 2px #fff;
+}
+.comment.color-purple {
+  color: #9d70e5;
+  text-shadow: 2px 2px #fff;
+}
+.comment.color-black {
+  color: #252e33;
+  text-shadow: 2px 2px #fff;
+}
+
+.popup-container {
+  padding-bottom: 15px;
+}
+.pdr {
+  padding-right: 80px !important;
+}
+.tag-sample {
+  opacity: 1 !important;
 }

@@ -1,22 +1,20 @@
 {
   "manifest_version": 2,
-  "version": "0.1",
-  "name": "Google Meet For Nico-Nico Style",
+  "version": "1.0.0",
+  "name": "Nico-Nico Style For Google Meet",
   "icons": {
     "16": "./image/icon16.png",
     "48": "./image/icon48.png",
     "128": "./image/icon128.png"
   },
-  "background": {
-    "scripts": [
-      "./script/jquery.min.js"
-    ],
-    "persistent": false
-  },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "js": [
         "./script/jquery.min.js",
+        "./script/const.js",
         "./script/script.js"
       ],
       "css": ["./style/style.css"],
