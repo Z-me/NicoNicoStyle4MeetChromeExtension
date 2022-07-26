@@ -1,6 +1,6 @@
 // NOTE: elements
 let prevThread;
-let isActive = localStorage.getItem('mns-active') === 'true'
+let isActive = localStorage.getItem('nsm-active') === 'true'
 
 let observer = new MutationObserver( (records) => {
   try {
