@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "version": "1.0.0",
   "name": "Nico-Nico Style For Google Meet",
   "icons": {
@@ -7,9 +7,7 @@
     "48": "./image/icon48.png",
     "128": "./image/icon128.png"
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "js": [
@@ -27,7 +25,9 @@
     "default_icon": "./image/icon128.png"
   },
   "web_accessible_resources": [
-    "./script/*",
-    "./image/*"
+    {
+      "resources": ["./script/*", "./image/*"],
+      "matches": ["https://meet.google.com/*"]
+    }
   ]
 }
