@@ -20,7 +20,7 @@
       "run_at": "document_start"
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "./popup.html",
     "default_icon": "./image/icon128.png"
   },
