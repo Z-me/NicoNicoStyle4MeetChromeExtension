@@ -1,6 +1,6 @@
 const CLASS_OBJ = {
   thread: 'z38b6',
-  messages: 'oIy2qc',
+  messages: 'beTDc',
 }
 const INPUT_AREA = 'textarea[name="chatTextInput"]'
 const OBSERVE_CONFIG = {
