@@ -11,7 +11,7 @@ let observer = new MutationObserver( (records) => {
     if ( !isActive ) return
 
     prevThread = thread.cloneNode(true)
-    const messages = thread.getElementsByClassName(CLASS_OBJ.messages)
+    const messages = thread.querySelectorAll(`.${CLASS_OBJ.messages} > div:first-child`)
     const message = messages[messages.length - 1].innerText
 
     // FIXME: スクリーンオブジェクトでかい‥。
