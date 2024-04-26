@@ -140,6 +140,12 @@ document.addEventListener('DOMContentLoaded', () => {
   elem.appendChild(cas)
 })
 
+document.addEventListener('keydown', function(event) {
+  if ((event.key === 'Enter' && event.isComposing) || event.keyCode === 229) {
+    event.stopPropagation();
+  }
+},{capture: true});
+
 chrome.runtime.onMessage.addListener(function(request) {
   const keys = Object.keys(request)
   if (keys.includes('active')) {
