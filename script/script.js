@@ -2,46 +2,52 @@
 let prevThread;
 let isActive = localStorage.getItem('nsm-active') === 'true'
 
-let observer = new MutationObserver( (records) => {
+// 各コメントを一時的に管理するオブジェクトを追加
+const activeComments = new Map();
+
+let observer = new MutationObserver((records) => {
   try {
-    const thread = document.getElementsByClassName(CLASS_OBJ.thread)[0]
+    const thread = document.getElementsByClassName(CLASS_OBJ.thread)[0];
 
-    if ( prevThread != undefined && thread.isEqualNode(prevThread) ) return
-    if ( thread.getElementsByClassName('gYckH').length == 1 ) return
-    if ( !isActive ) return
+    if (prevThread !== undefined && thread.isEqualNode(prevThread)) return;
+    if (thread.getElementsByClassName('gYckH').length == 1) return;
+    if (!isActive) return;
 
-    prevThread = thread.cloneNode(true)
-    const messages = thread.querySelectorAll(`.${CLASS_OBJ.messages} > div:first-child`)
-    const message = messages[messages.length - 1].innerText
+    prevThread = thread.cloneNode(true);
+    const messages = thread.querySelectorAll(`.${CLASS_OBJ.messages} > div:first-child`);
+    const messageElement = messages[messages.length - 1];
+    const message = messageElement.innerText;
 
-    // FIXME: スクリーンオブジェクトでかい‥。
-    let screen = document.body
-    let screenHeight = screen.offsetHeight
-    let screenWidth = screen.offsetWidth
+    if (activeComments.has(message)) return; // マップに登録することで重複を防ぐ
 
-    let comment = document.createElement('span')
+    activeComments.set(message, true);
 
-    let { msg, size, color } = getMessages(message)
-    comment.textContent = msg
-    document.getElementsByTagName('body')[0].appendChild(comment)
+    let screen = document.body;
+    let screenHeight = screen.offsetHeight;
+    let screenWidth = screen.offsetWidth;
 
-    let letterSize = screenHeight * 0.05 * size
-    comment.setAttribute('class', 'comment')
+    let comment = document.createElement('span');
+
+    let { msg, size, color } = getMessages(message);
+    comment.textContent = msg;
+    document.getElementsByTagName('body')[0].appendChild(comment);
+
+    let letterSize = screenHeight * 0.05 * size;
+    comment.setAttribute('class', 'comment');
     if (color) {
-      comment.setAttribute('class', `comment color-${color}`)
+      comment.setAttribute('class', `comment color-${color}`);
     }
 
-    const footerHeight = 88
-    let topPosition = Math.floor((screenHeight - letterSize - footerHeight) * Math.random())
+    const footerHeight = 88;
+    let topPosition = Math.floor((screenHeight - letterSize - footerHeight) * Math.random());
     let commentStyle = {
       left: `${screenWidth}px`,
       top: `${topPosition}px`,
       fontSize: `${letterSize}px`,
+    };
+    for (let prop in commentStyle) {
+      comment.style[prop] = commentStyle[prop];
     }
-    for(let prop in commentStyle) {
-      comment.style[prop] = commentStyle[prop]
-    }
-
 
     $(comment).animate(
       {
@@ -51,14 +57,14 @@ let observer = new MutationObserver( (records) => {
         'duration': 6000,
         'easing': 'linear',
         'complete': function() {
-          document.getElementsByTagName('body')[0].removeChild(comment)
+          document.getElementsByTagName('body')[0].removeChild(comment);
+          activeComments.delete(message); // 完了時に削除
         }
-      })
+      });
+  } catch (e) {
+    return;
   }
-  catch(e) {
-    return
-  }
-})
+});
 
 const getMessages = (msg) => {
   const tagReg = /<("[^"]*"|'[^']*'|[^'">])*>/g
